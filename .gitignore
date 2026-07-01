@@ -27,9 +27,10 @@ Thumbs.db
 .idea/
 *.iml
 
-# Sensitive / not for VCS
+# Sensitive / not for VCS (suspected malware/backdoors — see conversation with user)
 wp-config.php
 39860186842d1d2aaa316ab648cdc7fc.php
+wp-content/uploads/885b88ab.php
 .htaccess.nitrobackup
 .user.ini
 debug_log.txt
