@@ -1,0 +1,54 @@
+# WordPress core
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/upgrade/
+wp-content/uploads/wp-rocket-cache/
+wp-content/plugins/woocommerce/.sass-cache/
+
+# Logs and temp files
+*.log
+error_log
+*.tmp
+*.temp
+wp-content/temp-*
+wp-content/*.tmp
+
+# Backup files
+*.bak
+*.bk
+*.old
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# PHPStorm / IDE
+.idea/
+*.iml
+
+# Sensitive / not for VCS
+wp-config.php
+39860186842d1d2aaa316ab648cdc7fc.php
+.htaccess.nitrobackup
+.user.ini
+debug_log.txt
+
+# Full-site / database backups (too large for VCS, contain sensitive DB dumps)
+wp-content/ai1wm-backups/
+wp-content/uploads/backwpup/
+wp-content/uploads/backwpup-restore/
+wp-content/uploads/backup/
+wp-content/uploads/ShortpixelBackups/
+*.wpress
+
+# Generated cache / logs / temp (regenerated automatically by plugins)
+wp-content/litespeed/
+wp-content/wflogs/
+wp-content/wp-rocket-config/
+wp-content/upgrade-temp-backup/
+wp-content/temp-write-test-*
+wp-content/uploads-webpc/
+wp-content/uploads/nitropack-logs/
+wp-content/uploads/iwc-logs/
+wp-content/uploads/wc-logs/

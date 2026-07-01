@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bộ Tiêu Chí Lọc Dự Án Affiliate theo Category</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #151820;
+    --border: #252a36;
+    --accent: #00e5a0;
+    --accent2: #ff6b35;
+    --accent3: #4da6ff;
+    --warn: #ffd166;
+    --text: #e2e8f0;
+    --muted: #6b7280;
+    --green: #00e5a0;
+    --yellow: #ffd166;
+    --red: #ff6b35;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 32px 24px;
+  }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+  }
+
+  header p {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .baseline {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .baseline-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 12px 18px;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .baseline-item span {
+    display: block;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-green { background: var(--green); }
+  .dot-yellow { background: var(--yellow); }
+  .dot-red { background: var(--red); }
+  .dot-gray { background: #444; }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 36px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    display: grid;
+    grid-template-columns: 220px 1fr auto;
+    align-items: center;
+    padding: 14px 18px;
+    gap: 16px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .card-header:hover { background: #1a1f2e; }
+
+  .cat-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: #fff;
+  }
+
+  .cat-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-top: 3px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .tag-data { background: #1a3a2a; color: var(--green); }
+  .tag-nodata { background: #2a2010; color: var(--yellow); }
+  .tag-estimated { background: #1a2040; color: var(--accent3); }
+
+  .criteria-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .crit {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+  }
+
+  .crit-ok { background: #0d2a1e; border-color: #1a4a30; color: var(--green); }
+  .crit-warn { background: #2a2010; border-color: #4a3818; color: var(--yellow); }
+  .crit-ng { background: #2a1510; border-color: #4a2518; color: var(--red); }
+  .crit-est { background: #0d1a2a; border-color: #1a3050; color: var(--accent3); }
+
+  .verdict {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .verdict-pass { background: #0a2a1a; color: var(--green); border: 1px solid #1a4a2a; }
+  .verdict-adjust { background: #2a2800; color: var(--yellow); border: 1px solid #4a4500; }
+  .verdict-tight { background: #2a1500; color: #ff9966; border: 1px solid #4a2500; }
+  .verdict-relax { background: #0a1a2a; color: var(--accent3); border: 1px solid #1a3050; }
+
+  .card-body {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding: 16px 18px;
+    background: #0f1218;
+  }
+
+  .card-body.open { display: block; }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .detail-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px;
+  }
+
+  .detail-box label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .detail-box .val {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #fff;
+  }
+
+  .detail-box .sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .analysis {
+    background: #0d1018;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent3);
+    border-radius: 4px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+
+  .analysis h4 {
+    font-size: 11px;
+    color: var(--accent3);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .analysis p {
+    font-size: 12px;
+    color: #a0aec0;
+    line-height: 1.7;
+  }
+
+  .recommended {
+    background: #080f0a;
+    border: 1px solid #1a3a20;
+    border-radius: 4px;
+    padding: 14px;
+  }
+
+  .recommended h4 {
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .rec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .rec-item {
+    background: #0d2018;
+    border: 1px solid #1a3a20;
+    border-radius: 3px;
+    padding: 10px;
+  }
+
+  .rec-item label {
+    font-size: 10px;
+    color: #4a8060;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: block;
+    margin-bottom: 3px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .rec-item .rval {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .chevron {
+    font-size: 10px;
+    color: var(--muted);
+    transition: transform 0.2s;
+  }
+
+  .chevron.open { transform: rotate(180deg); }
+
+  .toggle-all {
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 4px 12px;
+    cursor: pointer;
+    float: right;
+    margin-top: -4px;
+  }
+  .toggle-all:hover { color: var(--accent); border-color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Bộ Tiêu Chí Lọc Dự Án Affiliate — Phân Tích theo Category</h1>
+  <p>Kết hợp dữ liệu thực tế từ Flux OPM Report + đánh giá thị trường 2025–2026 · Click vào từng category để xem chi tiết</p>
+</header>
+
+<div class="baseline">
+  <div class="baseline-item"><span>Traffic &gt; 80,000/tháng</span>Tiêu chí gốc #1</div>
+  <div class="baseline-item"><span>Traffic từ khoá &gt; 3,000</span>Tiêu chí gốc #2</div>
+  <div class="baseline-item"><span>AOV &gt; $10/lượt mua</span>Tiêu chí gốc #3</div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="dot dot-green"></div> Giữ nguyên tiêu chí</div>
+  <div class="legend-item"><div class="dot dot-yellow"></div> Cần điều chỉnh</div>
+  <div class="legend-item"><div class="dot dot-red"></div> Nên nới lỏng / hạ threshold</div>
+  <div class="legend-item"><div class="dot dot-gray"></div> Không có dữ liệu — ước tính thị trường</div>
+</div>
+
+<div class="section-title">
+  Categories có dữ liệu trong file
+  <button class="toggle-all" onclick="toggleAll()">Mở / Đóng tất cả</button>
+</div>
+
+<div class="cards" id="cards"></div>
+
+<script>
+const BASE = { traffic: 80000, keyword: 3000, aov: 10 };
+
+const categories = [
+  // === CÓ DỮ LIỆU FILE ===
+  {
+    name: "Computers_Electronics_and_Technology",
+    hasData: true,
+    fileData: { projects: 176, ongoing: 47, stopped: 97, avgTraffic: 2105529, trafficOk: 158, totalRev: 4202.72, avgRev: 23.88, avgCPC: 12.68, successRate: 21.6 },
+    market: "Thị trường cực lớn, cạnh tranh cao. AOV thực tế $12.68 — vừa đạt ngưỡng. Traffic rất cao nhưng tỷ lệ thành công thấp (21.6%) cho thấy nhiều dự án bị STOPPED do khó convert. Xu hướng 2025: AI hardware, SSD, smart home bùng nổ.",
+    trafficRec: 150000, keywordRec: 5000, aovRec: 15,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Nâng threshold — thị trường lớn cần filter chặt hơn để loại noise"
+  },
+  {
+    name: "Health",
+    hasData: true,
+    fileData: { projects: 12, ongoing: 3, stopped: 5, avgTraffic: 329209, trafficOk: 9, totalRev: 346.45, avgRev: 28.87, avgCPC: 4.58, successRate: 16.7 },
+    market: "AOV thực tế khá tốt ($28.87 avg revenue/dự án) nhưng CPC thấp ($4.58) và success rate chỉ 16.7%. Thị trường health đang bùng nổ (supplements, wearable, mental health). Barrier: nhiều dự án không hiển thị hoa hồng.",
+    trafficRec: 80000, keywordRec: 3000, aovRec: 15,
+    trafficVerdict: "keep", keywordVerdict: "keep", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Giữ traffic/keyword, nâng AOV — ưu tiên sản phẩm có giá trị cao"
+  },
+  {
+    name: "Sports",
+    hasData: true,
+    fileData: { projects: 31, ongoing: 15, stopped: 11, avgTraffic: 568447, trafficOk: 27, totalRev: 2260.73, avgRev: 72.93, avgCPC: 9.49, successRate: 29.0 },
+    market: "Category hiệu quả nhất trong nhóm có dữ liệu. AOV trung bình $72.93 — rất cao. Success rate 29% ổn. CPC gần $10. Xu hướng: pickleball, running gear, sports tech tăng mạnh 2025.",
+    trafficRec: 80000, keywordRec: 3000, aovRec: 10,
+    trafficVerdict: "keep", keywordVerdict: "keep", aovVerdict: "keep",
+    verdict: "pass",
+    note: "Tiêu chí gốc phù hợp — đây là ngách đang hoạt động tốt"
+  },
+  {
+    name: "Games",
+    hasData: true,
+    fileData: { projects: 12, ongoing: 6, stopped: 5, avgTraffic: 6081151, trafficOk: 12, totalRev: 798.21, avgRev: 66.52, avgCPC: 7.75, successRate: 33.3 },
+    market: "Traffic rất cao (avg 6M+), AOV tốt ($66.52). Tuy nhiên CPC $7.75 gần ngưỡng. Success rate 33% — tốt nhất trong nhóm. Gaming 2025 bùng nổ với mobile và indie. Lưu ý: revenue thực tế phụ thuộc nhiều vào genre.",
+    trafficRec: 100000, keywordRec: 5000, aovRec: 10,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "keep",
+    verdict: "adjust",
+    note: "Nâng traffic/keyword threshold — traffic ngành rất cao, cần filter quality"
+  },
+  {
+    name: "Travel_and_Tourism",
+    hasData: true,
+    fileData: { projects: 39, ongoing: 11, stopped: 15, avgTraffic: 6574477, trafficOk: 36, totalRev: 5.25, avgRev: 0.13, avgCPC: 22.68, successRate: 2.6 },
+    market: "NGHỊCH LÝ: CPC cao nhất ($22.68) nhưng tổng doanh thu gần bằng 0, success rate chỉ 2.6%. Cho thấy vấn đề attribution/cookie — travel sites thường dùng last-click model. Cần chọn program có cookie window dài (30–90 ngày).",
+    trafficRec: 200000, keywordRec: 10000, aovRec: 25,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "raise",
+    verdict: "tight",
+    note: "Nâng mạnh tất cả — chỉ nhắm vào site traffic lớn, cookie dài mới khả thi"
+  },
+  {
+    name: "Home_and_Garden",
+    hasData: true,
+    fileData: { projects: 45, ongoing: 18, stopped: 13, avgTraffic: 386827, trafficOk: 35, totalRev: 170.36, avgRev: 3.79, avgCPC: 5.19, successRate: 11.1 },
+    market: "Success rate thấp (11.1%) và AOV thấp ($3.79 avg). CPC $5.19 chưa đạt ngưỡng $10. Tuy nhiên thị trường Home & Garden 2025 đang tăng do smart home, DIY trend. Cần target sản phẩm có giá cao hơn.",
+    trafficRec: 80000, keywordRec: 3000, aovRec: 20,
+    trafficVerdict: "keep", keywordVerdict: "keep", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Nâng mạnh AOV — chỉ lấy sản phẩm premium (smart home, furniture, tools)"
+  },
+  {
+    name: "Adult",
+    hasData: true,
+    fileData: { projects: 12, ongoing: 4, stopped: 7, avgTraffic: 631091, trafficOk: 11, totalRev: 199.34, avgRev: 16.61, avgCPC: 1.74, successRate: 33.3 },
+    market: "Traffic lớn, success rate 33% tốt nhưng CPC cực thấp ($1.74). AOV thực tế $16.61 — đạt ngưỡng. Rủi ro: payment processor hạn chế, platform advertising bị block. Cần network chuyên biệt (ClickBank, ShareASale).",
+    trafficRec: 200000, keywordRec: 5000, aovRec: 20,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Nâng threshold bù rủi ro compliance — chỉ lấy site volume rất lớn"
+  },
+  {
+    name: "Food_and_Drink",
+    hasData: true,
+    fileData: { projects: 8, ongoing: 2, stopped: 2, avgTraffic: 359368, trafficOk: 7, totalRev: 95.04, avgRev: 11.88, avgCPC: 33.84, successRate: 37.5 },
+    market: "CPC cao nhất nhóm ($33.84) và success rate 37.5% — số tốt. AOV $11.88 vừa đạt ngưỡng. Subscription model (meal kit, coffee) đang bùng nổ với LTV cao. Ưu tiên brands có recurring revenue.",
+    trafficRec: 50000, keywordRec: 2000, aovRec: 10,
+    trafficVerdict: "lower", keywordVerdict: "lower", aovVerdict: "keep",
+    verdict: "relax",
+    note: "Nới lỏng traffic/keyword — ngách nhỏ nhưng conversion tốt, đặc biệt subscription"
+  },
+  {
+    name: "Vehicles",
+    hasData: true,
+    fileData: { projects: 17, ongoing: 4, stopped: 2, avgTraffic: 3370054, trafficOk: 14, totalRev: 153.69, avgRev: 9.04, avgCPC: 5.79, successRate: 11.8 },
+    market: "AOV thực tế $9.04 — sát ngưỡng $10. CPC $5.79 thấp. Thị trường: EV accessories, car tech đang tăng mạnh. Automotive affiliate thường trả CPA cao cho test drive, insurance. Cần chọn đúng program type.",
+    trafficRec: 80000, keywordRec: 3000, aovRec: 10,
+    trafficVerdict: "keep", keywordVerdict: "keep", aovVerdict: "keep",
+    verdict: "adjust",
+    note: "Giữ nguyên threshold nhưng ưu tiên EV/insurance/financing — AOV cao hơn"
+  },
+  {
+    name: "Science_and_Education",
+    hasData: true,
+    fileData: { projects: 8, ongoing: 2, stopped: 5, avgTraffic: 7170939, trafficOk: 8, totalRev: 156.94, avgRev: 19.62, avgCPC: 3.75, successRate: 25.0 },
+    market: "Traffic rất cao (7M+), AOV $19.62 tốt nhưng CPC thấp ($3.75). Success rate 25%. EdTech 2025 đang bùng nổ với AI tutoring, online certs. Subscription model (Coursera, MasterClass) cho LTV tốt.",
+    trafficRec: 80000, keywordRec: 3000, aovRec: 15,
+    trafficVerdict: "keep", keywordVerdict: "keep", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Nâng AOV — focus vào courses/certifications có giá >$50, bỏ free tools"
+  },
+  {
+    name: "Arts_and_Entertainment",
+    hasData: true,
+    fileData: { projects: 1, ongoing: 1, stopped: 0, avgTraffic: 2406182, trafficOk: 1, totalRev: 0, avgRev: 0, avgCPC: 0.29, successRate: 0 },
+    market: "Chỉ 1 dự án, chưa có doanh thu. CPC cực thấp ($0.29). Tuy nhiên thị trường rộng lớn: streaming, ticketing, creator economy đang tăng. Cần phân loại rõ hơn — ticketing/events có AOV cao hơn nhiều so với content.",
+    trafficRec: 100000, keywordRec: 5000, aovRec: 15,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Nâng threshold — dữ liệu quá ít, ưu tiên ticketing/events/streaming subscriptions"
+  },
+  {
+    name: "Business_and_Consumer_Services",
+    hasData: true,
+    fileData: { projects: 4, ongoing: 1, stopped: 0, avgTraffic: 790550, trafficOk: 3, totalRev: 405.03, avgRev: 101.26, avgCPC: 4.51, successRate: 50.0 },
+    market: "AOV cao nhất nhóm ($101.26 avg per project). Success rate 50% — tốt nhất. B2B services thường có deal size lớn. SaaS, consulting, HR tools đang tăng mạnh 2025. Ít dự án nhưng hiệu quả.",
+    trafficRec: 50000, keywordRec: 2000, aovRec: 10,
+    trafficVerdict: "lower", keywordVerdict: "lower", aovVerdict: "keep",
+    verdict: "relax",
+    note: "Nới lỏng traffic — B2B traffic thấp hơn nhưng intent cao, conversion tốt hơn"
+  },
+  {
+    name: "Jobs_and_Career",
+    hasData: true,
+    fileData: { projects: 2, ongoing: 0, stopped: 2, avgTraffic: 615163, trafficOk: 2, totalRev: 0, avgRev: 0, avgCPC: 0.38, successRate: 0 },
+    market: "2 dự án đều STOPPED, chưa có doanh thu. CPC cực thấp ($0.38). Tuy nhiên HR tech, recruitment SaaS đang bùng nổ với AI. Cần chọn đúng program — job boards trả thấp nhưng HR software trả cao (CPL $50–200).",
+    trafficRec: 80000, keywordRec: 3000, aovRec: 20,
+    trafficVerdict: "keep", keywordVerdict: "keep", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Giữ traffic, nâng mạnh AOV — tập trung HR SaaS, không lấy job boards"
+  },
+  {
+    name: "Pets_and_Animals",
+    hasData: true,
+    fileData: { projects: 2, ongoing: 2, stopped: 0, avgTraffic: 494591, trafficOk: 1, totalRev: 0, avgRev: 0, avgCPC: null, successRate: 0 },
+    market: "2 dự án đang ONGOING nhưng chưa có doanh thu — mới chạy. Pet industry 2025 rất mạnh: $150B+ globally, pet insurance tăng 20%/năm, premium pet food subscription bùng nổ. Tiềm năng tốt.",
+    trafficRec: 60000, keywordRec: 2000, aovRec: 15,
+    trafficVerdict: "lower", keywordVerdict: "lower", aovVerdict: "raise",
+    verdict: "relax",
+    note: "Nới lỏng traffic — ngách growing nhanh, nâng AOV để focus premium/subscription"
+  },
+
+  // === KHÔNG CÓ DỮ LIỆU — ƯỚC TÍNH THỊ TRƯỜNG ===
+  {
+    name: "AI_Chatbots_and_Tools",
+    hasData: false,
+    market: "Thị trường AI tools 2025 tăng trưởng nhanh nhất: 35%+ YoY. Subscription model với MRR cao. AOV thực tế: $20–$200/tháng (ChatGPT Plus $20, Midjourney $10–$60, Jasper $49+). Traffic organic cao do informational intent. Commission thường 20–30% recurring.",
+    trafficRec: 50000, keywordRec: 2000, aovRec: 20,
+    trafficVerdict: "lower", keywordVerdict: "lower", aovVerdict: "raise",
+    verdict: "relax",
+    note: "Nới lỏng mạnh — thị trường mới nổi, traffic thấp hơn nhưng LTV và commission cực cao"
+  },
+  {
+    name: "Ecommerce_Shopping",
+    hasData: false,
+    market: "Thị trường rộng nhất nhưng commission thấp (Amazon: 1–10%). AOV cao nhưng margin affiliate mỏng. Cần focus vào niche e-commerce (không phải marketplace) — Shopify stores, DTC brands thường trả 10–20%. Traffic cạnh tranh cao.",
+    trafficRec: 150000, keywordRec: 8000, aovRec: 15,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Nâng threshold — thị trường lớn nhưng noisy, cần filter chặt vào DTC brands"
+  },
+  {
+    name: "Hobbies_and_Leisure",
+    hasData: false,
+    market: "Category đa dạng: crafting, photography, music, collecting. AOV thường $30–$150. Traffic moderate. Thị trường 2025 tăng do work-from-home lifestyle. Commission: 5–15% trung bình. Dễ content, khó scale lớn.",
+    trafficRec: 60000, keywordRec: 2000, aovRec: 10,
+    trafficVerdict: "lower", keywordVerdict: "lower", aovVerdict: "keep",
+    verdict: "relax",
+    note: "Nới nhẹ — ngách dễ content, nhiều micro-niche có conversion rate cao"
+  },
+  {
+    name: "Lifestyle",
+    hasData: false,
+    market: "Category cực rộng: fashion, home decor, wellness, self-improvement. Traffic rất cao nhưng intent diffuse. AOV phụ thuộc nhiều vào sub-niche. Commission 5–15%. Cần phân loại rõ sub-category để set threshold đúng.",
+    trafficRec: 100000, keywordRec: 5000, aovRec: 15,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Nâng threshold vì quá rộng — cần drill down sub-niche cụ thể"
+  },
+  {
+    name: "News_Media_Publishers",
+    hasData: false,
+    market: "Traffic cực cao nhưng commercial intent thấp. Affiliate model khó áp dụng trực tiếp — thường dùng display ads hơn. Tuy nhiên media sites với reviews/comparisons (tech, finance) convert tốt. Programmatic content đang tăng.",
+    trafficRec: 500000, keywordRec: 10000, aovRec: 10,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "keep",
+    verdict: "tight",
+    note: "Nâng mạnh traffic — chỉ news sites lớn có review section mới khả thi"
+  },
+  {
+    name: "Law_and_Government",
+    hasData: false,
+    market: "Legaltech đang bùng nổ: LegalZoom, Rocket Lawyer, online notary. AOV cao ($50–$500). Traffic thấp nhưng intent cực cao (high commercial intent). Lead generation trả $50–$200/lead. YMYL niche cần authority site.",
+    trafficRec: 30000, keywordRec: 1000, aovRec: 30,
+    trafficVerdict: "lower", keywordVerdict: "lower", aovVerdict: "raise",
+    verdict: "relax",
+    note: "Nới lỏng mạnh traffic — high-intent low-volume niche, AOV và CPL rất cao"
+  },
+  {
+    name: "Community_and_Society",
+    hasData: false,
+    market: "Thị trường khó monetize trực tiếp qua affiliate. Tuy nhiên sub-niches như dating apps ($30–$100 CPL), nonprofit tools, community platforms đang tăng. Commission thường thấp trừ dating/relationship niche.",
+    trafficRec: 50000, keywordRec: 2000, aovRec: 15,
+    trafficVerdict: "lower", keywordVerdict: "lower", aovVerdict: "raise",
+    verdict: "adjust",
+    note: "Chỉ accept nếu là dating/relationship/community SaaS — tránh general community sites"
+  },
+  {
+    name: "Heavy_Industry_and_Engineering",
+    hasData: false,
+    market: "B2B niche với deal size lớn ($500–$50,000). Traffic thấp nhưng CPL/CPA rất cao. Thị trường: industrial equipment, engineering software (AutoCAD, Solidworks), safety equipment. Ít cạnh tranh affiliate, conversion chậm.",
+    trafficRec: 10000, keywordRec: 500, aovRec: 50,
+    trafficVerdict: "lower", keywordVerdict: "lower", aovVerdict: "raise",
+    verdict: "relax",
+    note: "Nới lỏng mạnh — B2B low-traffic high-value, AOV/deal size cực lớn"
+  },
+  {
+    name: "Reference_Materials",
+    hasData: false,
+    market: "Traffic cao (Wikipedia-style) nhưng commercial intent cực thấp. Khó monetize qua affiliate. Tuy nhiên: academic databases, research tools, professional references có subscription model tốt. Cần phân loại rõ.",
+    trafficRec: 200000, keywordRec: 5000, aovRec: 20,
+    trafficVerdict: "raise", keywordVerdict: "raise", aovVerdict: "raise",
+    verdict: "tight",
+    note: "Chỉ accept professional/academic subscription tools — bỏ general reference sites"
+  },
+];
+
+const verdictConfig = {
+  pass: { label: "✓ Giữ nguyên", cls: "verdict-pass" },
+  adjust: { label: "↑ Điều chỉnh tăng", cls: "verdict-adjust" },
+  tight: { label: "↑↑ Nâng mạnh", cls: "verdict-tight" },
+  relax: { label: "↓ Nới lỏng", cls: "verdict-relax" },
+};
+
+const critLabel = { keep: "= Giữ", raise: "↑ Nâng", lower: "↓ Nới", est: "~ Ước tính" };
+const critCls = { keep: "crit-ok", raise: "crit-warn", lower: "crit-ok", est: "crit-est" };
+
+function fmt(n) {
+  if (!n && n !== 0) return "N/A";
+  if (n >= 1000000) return (n/1000000).toFixed(1) + "M";
+  if (n >= 1000) return (n/1000).toFixed(0) + "K";
+  return n.toFixed(0);
+}
+
+function fmtMoney(n) {
+  if (!n && n !== 0) return "N/A";
+  return "$" + n.toFixed(2);
+}
+
+function buildCard(cat, idx) {
+  const vc = verdictConfig[cat.verdict];
+  const tv = cat.trafficVerdict || "est";
+  const kv = cat.keywordVerdict || "est";
+  const av = cat.aovVerdict || "est";
+
+  let detailHTML = "";
+  if (cat.hasData) {
+    detailHTML = `
+      <div class="detail-grid">
+        <div class="detail-box">
+          <label>Avg Traffic/tháng</label>
+          <div class="val">${fmt(cat.fileData.avgTraffic)}</div>
+          <div class="sub">${cat.fileData.trafficOk}/${cat.fileData.projects} dự án đạt 80K</div>
+        </div>
+        <div class="detail-box">
+          <label>AOV thực tế (Avg Rev)</label>
+          <div class="val">${fmtMoney(cat.fileData.avgRev)}</div>
+          <div class="sub">CPC avg: ${fmtMoney(cat.fileData.avgCPC)}</div>
+        </div>
+        <div class="detail-box">
+          <label>Success Rate</label>
+          <div class="val">${cat.fileData.successRate}%</div>
+          <div class="sub">${cat.fileData.ongoing} ongoing / ${cat.fileData.stopped} stopped</div>
+        </div>
+      </div>`;
+  }
+
+  return `
+    <div class="card" id="card-${idx}">
+      <div class="card-header" onclick="toggle(${idx})">
+        <div>
+          <div class="cat-name">${cat.name.replace(/_/g,' ')}</div>
+          <span class="cat-tag ${cat.hasData ? 'tag-data' : 'tag-estimated'}">${cat.hasData ? 'CÓ DỮ LIỆU FILE' : 'ƯỚC TÍNH THỊ TRƯỜNG'}</span>
+        </div>
+        <div class="criteria-row">
+          <div class="crit ${critCls[tv]}">Traffic: ${fmt(cat.trafficRec)} <small>${critLabel[tv]}</small></div>
+          <div class="crit ${critCls[kv]}">Keyword: ${fmt(cat.keywordRec)} <small>${critLabel[kv]}</small></div>
+          <div class="crit ${critCls[av]}">AOV: ${fmtMoney(cat.aovRec)} <small>${critLabel[av]}</small></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="verdict ${vc.cls}">${vc.label}</div>
+          <div class="chevron" id="chev-${idx}">▼</div>
+        </div>
+      </div>
+      <div class="card-body" id="body-${idx}">
+        ${detailHTML}
+        <div class="analysis">
+          <h4>Phân tích thị trường</h4>
+          <p>${cat.market}</p>
+        </div>
+        <div class="recommended">
+          <h4>Tiêu chí đề xuất</h4>
+          <div class="rec-grid">
+            <div class="rec-item">
+              <label>Traffic/tháng</label>
+              <div class="rval">&gt; ${fmt(cat.trafficRec)}</div>
+            </div>
+            <div class="rec-item">
+              <label>Keyword Traffic</label>
+              <div class="rval">&gt; ${fmt(cat.keywordRec)}</div>
+            </div>
+            <div class="rec-item">
+              <label>AOV</label>
+              <div class="rval">&gt; ${fmtMoney(cat.aovRec)}</div>
+            </div>
+          </div>
+          <p style="margin-top:10px;font-size:11px;color:#6a9070;font-style:italic;">${cat.note}</p>
+        </div>
+      </div>
+    </div>`;
+}
+
+// Sort: có data trước, sorted by name
+const withData = categories.filter(c => c.hasData);
+const noData = categories.filter(c => !c.hasData);
+const sorted = [...withData, ...noData];
+
+const container = document.getElementById('cards');
+
+// Add section divider before no-data
+let html = sorted.map((cat, i) => buildCard(cat, i)).join('');
+container.innerHTML = html;
+
+// Insert section header before first no-data item
+const firstNoData = withData.length;
+const noDataCard = document.getElementById(`card-${firstNoData}`);
+if (noDataCard) {
+  const div = document.createElement('div');
+  div.className = 'section-title';
+  div.innerHTML = 'Categories không có dữ liệu file — dựa trên phân tích thị trường 2025–2026';
+  noDataCard.parentNode.insertBefore(div, noDataCard);
+}
+
+function toggle(idx) {
+  const body = document.getElementById('body-' + idx);
+  const chev = document.getElementById('chev-' + idx);
+  body.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+
+let allOpen = false;
+function toggleAll() {
+  allOpen = !allOpen;
+  sorted.forEach((_, i) => {
+    const body = document.getElementById('body-' + i);
+    const chev = document.getElementById('chev-' + i);
+    if (allOpen) { body.classList.add('open'); chev.classList.add('open'); }
+    else { body.classList.remove('open'); chev.classList.remove('open'); }
+  });
+}
+</script>
+</body>
+</html>
