@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//reviewking.info/main-sitemap.xsl"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>Locations for Seven</name>
+		<open>1</open>
+		<Folder>
+			<atom:link href="https://reviewking.info" />
+			<Placemark>
+				<name><![CDATA[Seven]]></name>
+				<description><![CDATA[Review King - Review King – Explore, compare and choose the best products]]></description>
+				<address><![CDATA[]]></address>
+				<phoneNumber><![CDATA[]]></phoneNumber>
+				<atom:link href="https://reviewking.info"/>
+				<LookAt>
+					<altitude>0</altitude>
+					<range></range>
+					<tilt>0</tilt>
+				</LookAt>
+				<Point>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

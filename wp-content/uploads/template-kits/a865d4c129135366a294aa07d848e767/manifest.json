@@ -1,0 +1,1330 @@
+{
+    "manifest_version": "1.0.23",
+    "title": "Prometix",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/kitpro.site",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/home\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About Us",
+            "screenshot": "screenshots\/about-us.jpg",
+            "source": "templates\/about-us.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/about-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Services",
+            "screenshot": "screenshots\/services.jpg",
+            "source": "templates\/services.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/services\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Our Team",
+            "screenshot": "screenshots\/our-team.jpg",
+            "source": "templates\/our-team.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/our-team\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Pricing",
+            "screenshot": "screenshots\/pricing.jpg",
+            "source": "templates\/pricing.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/pricing\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Case Study",
+            "screenshot": "screenshots\/case-study.jpg",
+            "source": "templates\/case-study.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/case-study\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.jpg",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "FAQ",
+            "screenshot": "screenshots\/faq.jpg",
+            "source": "templates\/faq.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/faq\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "404",
+            "screenshot": "screenshots\/404.jpg",
+            "source": "templates\/404.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/404\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact Us",
+            "screenshot": "screenshots\/contact-us.jpg",
+            "source": "templates\/contact-us.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/contact-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact Metform",
+            "screenshot": "screenshots\/contact-metform.jpg",
+            "source": "templates\/contact-metform.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/contact-metform\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/kitpro.site\/prometix\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "ElementsKit Lite",
+            "version": "3.4.0",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Jeg Elementor Kit",
+            "version": "2.6.9",
+            "file": "jeg-elementor-kit\/jeg-elementor-kit.php",
+            "author": "Jegtheme"
+        },
+        {
+            "name": "Qi Addons For Elementor",
+            "version": "1.5.4",
+            "file": "qi-addons-for-elementor\/class-qiaddonsforelementor.php",
+            "author": "Qode Interactive"
+        },
+        {
+            "name": "Ultimate Addons for Elementor Lite",
+            "version": "2.1.0",
+            "file": "header-footer-elementor\/header-footer-elementor.php",
+            "author": "Brainstorm Force"
+        },
+        {
+            "name": "MetForm",
+            "version": "3.5.0",
+            "file": "metform\/metform.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.25.9",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "4-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/4-1-800x427.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/404.json",
+                    "name": "404"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 242912,
+            "dimensions": [
+                1500,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "12.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/12-800x427.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/404.json",
+                    "name": "404"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 217398,
+            "dimensions": [
+                1500,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "1AK.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/1AK-800x800.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/404.json",
+                    "name": "404"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 30293,
+            "dimensions": [
+                2500,
+                2500
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        },
+        {
+            "filename": "6-5.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/6-5.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 132208,
+            "dimensions": [
+                700,
+                700
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "2.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/2-800x800.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 43368,
+            "dimensions": [
+                1080,
+                1080
+            ],
+            "image_source": "self_created",
+            "image_urls": ""
+        },
+        {
+            "filename": "3.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/3-800x560.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 91541,
+            "dimensions": [
+                1000,
+                700
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "9.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/9-800x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 119989,
+            "dimensions": [
+                1000,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "14.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/14-800x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 89552,
+            "dimensions": [
+                1000,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "15.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/15-800x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 90597,
+            "dimensions": [
+                1000,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "16.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/16-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 135162,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "19.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/19.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 1089,
+            "dimensions": [
+                64,
+                64
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "17.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/17-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 107500,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "20.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/20.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 991,
+            "dimensions": [
+                64,
+                64
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "18.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/18-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 68946,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "21.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/21.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 788,
+            "dimensions": [
+                64,
+                64
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "logoipsum-221.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/logoipsum-221.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 4959,
+            "dimensions": [
+                496,
+                125
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logoipsum-253.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/logoipsum-253.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 4198,
+            "dimensions": [
+                389,
+                125
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logoipsum-311.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/logoipsum-311.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 6486,
+            "dimensions": [
+                704,
+                167
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logoipsum-317.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/logoipsum-317.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 7262,
+            "dimensions": [
+                733,
+                167
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logoipsum-323-1.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/logoipsum-323-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 4952,
+            "dimensions": [
+                417,
+                167
+            ],
+            "image_source": "cc0",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "22.png.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/22.png-800x427.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                }
+            ],
+            "filesize": 187412,
+            "dimensions": [
+                1500,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "23.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/23-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                }
+            ],
+            "filesize": 107205,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "24.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/24-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                }
+            ],
+            "filesize": 78575,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "25.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/25-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                }
+            ],
+            "filesize": 107859,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "26-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/26-1-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                }
+            ],
+            "filesize": 118727,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "11.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/11-800x427.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 187201,
+            "dimensions": [
+                1500,
+                800
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "31-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/31-1-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 90842,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "27.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/27.png",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 1023,
+            "dimensions": [
+                64,
+                64
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "32-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/32-1-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 142976,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "29.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/29.png",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 1068,
+            "dimensions": [
+                64,
+                64
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "33-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/33-1-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 109050,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "30.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/30.png",
+            "templates": [
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                }
+            ],
+            "filesize": 1073,
+            "dimensions": [
+                64,
+                64
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "34-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/34-1-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 105257,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "35-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/35-1-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 88132,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "36-2.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/36-2-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our Team"
+                }
+            ],
+            "filesize": 105924,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "37-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/37-1-800x480.jpg",
+            "templates": [
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                }
+            ],
+            "filesize": 100925,
+            "dimensions": [
+                1000,
+                600
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "4.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/4-800x587.jpg",
+            "templates": [
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                }
+            ],
+            "filesize": 223498,
+            "dimensions": [
+                1500,
+                1100
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "38-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/38-1-800x480.jpg",
+            "templates": [
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                }
+            ],
+            "filesize": 157016,
+            "dimensions": [
+                1000,
+                600
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "39-1.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/39-1-800x480.jpg",
+            "templates": [
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                }
+            ],
+            "filesize": 104384,
+            "dimensions": [
+                1000,
+                600
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "40.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/40-800x480.jpg",
+            "templates": [
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                }
+            ],
+            "filesize": 64499,
+            "dimensions": [
+                1000,
+                600
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "41.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/41-800x480.jpg",
+            "templates": [
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                }
+            ],
+            "filesize": 112019,
+            "dimensions": [
+                1000,
+                600
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "42.jpg",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/42-800x480.jpg",
+            "templates": [
+                {
+                    "source": "templates\/case-study.json",
+                    "name": "Case Study"
+                }
+            ],
+            "filesize": 157830,
+            "dimensions": [
+                1000,
+                600
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "31.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/31.png",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 7006,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "32.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/32.png",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 8135,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "33.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/33.png",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 10901,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "34.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/34.png",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 4736,
+            "dimensions": [
+                512,
+                512
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        },
+        {
+            "filename": "1.png",
+            "thumbnail_url": "https:\/\/kitpro.site\/prometix\/wp-content\/uploads\/sites\/380\/2025\/05\/1-800x210.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 44113,
+            "dimensions": [
+                1998,
+                524
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/collections\/DBYG4XJ6H2"
+        }
+    ]
+}
