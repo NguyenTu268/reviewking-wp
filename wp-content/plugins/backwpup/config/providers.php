@@ -1,0 +1,33 @@
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+$pro_providers = [];
+if ( BackWPup::is_pro() ) {
+	$pro_providers = [
+		'WPMedia\BackWPup\Backup\ServiceProviderPro',
+		'WPMedia\BackWPup\License\ServiceProvider',
+		'WPMedia\BackWPup\Cli\ServiceProviderPro',
+	];
+}
+
+$providers = [
+	'WPMedia\BackWPup\Adapters\ServiceProvider',
+	'WPMedia\BackWPup\StorageProviders\ServiceProvider',
+	'WPMedia\BackWPup\Tracking\ServiceProvider',
+	'WPMedia\BackWPup\Admin\ServiceProvider',
+	'WPMedia\BackWPup\Backup\ServiceProvider',
+	'WPMedia\BackWPup\Jobs\ServiceProvider',
+	'WPMedia\BackWPup\Backups\ServiceProvider',
+	'WPMedia\BackWPup\Frontend\ServiceProvider',
+	'WPMedia\BackWPup\Beta\ServiceProvider',
+	'WPMedia\BackWPup\Cli\ServiceProvider',
+	'WPMedia\BackWPup\Hosting\ServiceProvider',
+	'WPMedia\BackWPup\Log\ServiceProvider',
+	'WPMedia\BackWPup\MCP\ServiceProvider',
+];
+
+
+return array_merge( $providers, $pro_providers );
