@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#D8D8D8;}
+	.st1{filter:url(#Adobe_OpacityMaskFilter);}
+	.st2{fill:#FFFFFF;}
+	.st3{mask:url(#b_1_);}
+	.st4{fill:#DE3831;}
+	.st5{fill:#002395;}
+	.st6{fill:#007A4D;}
+	.st7{fill:#F5F5F5;}
+	.st8{fill:#FFB612;}
+</style>
+<g>
+	<g>
+		<circle id="a_1_" class="st0" cx="19" cy="19" r="19"/>
+	</g>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="58" height="38">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="0" y="0" width="58" height="38" id="b_1_">
+		<g class="st1">
+			<circle id="a_2_" class="st2" cx="19" cy="19" r="19"/>
+		</g>
+	</mask>
+	<g class="st3">
+		<polygon points="0,7 0,31 16,19 		"/>
+		<path class="st4" d="M8,0l18,14h12V1c0-0.6-0.4-1-1-1H8z"/>
+		<path class="st5" d="M8,38l18-14h12v13c0,0.6-0.4,1-1,1H8z"/>
+		<path class="st6" d="M6.4,0H1C0.4,0,0,0.5,0,1v4.1L17.6,19L0,32.9V37c0,0.6,0.4,1,1,1h5.4l19-15H38v-8H25.4L6.4,0z"/>
+		<polygon class="st7" points="9.7,0 6.4,0 25.4,15 58,15 58,13 26.1,13 		"/>
+		<polygon class="st8" points="0,5.1 0,7.7 14.3,19 0,30.3 0,32.9 17.6,19 		"/>
+		<polygon class="st7" points="25.4,23 6.4,38 9.7,38 26.1,25 58,25 58,23 		"/>
+	</g>
+</g>
+</svg>
